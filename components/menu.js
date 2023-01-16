@@ -11,7 +11,7 @@ export default function Menu() {
                         QUERO COMEÇAR AGORA 
                     </Button>
 
-                    <Button className="bg-[#FAA635]  border-none overflow-hidden pr-16" >
+                    <Button className="bg-tertiary_orange  border-none overflow-hidden pr-16" >
                         RETOMAR
                     </Button>
                 </div>

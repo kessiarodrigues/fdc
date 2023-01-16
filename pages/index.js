@@ -18,19 +18,13 @@ import Carrossel1 from "../public/img/carrossel1.svg"
 import Carrossel2 from "../public/img/carrossel2.svg"
 import Carrossel3 from "../public/img/carrossel3.svg"
 import Ranking from "../public/img/ranking.svg"
-import Ranking2 from "../public/img/Ranking2.svg"
-import MSGicon from "../public/img/msg.svg"
-import Linkedin from "../public/img/in.svg"
-import Instagram from "../public/img/ig.svg"
-import Youtube from "../public/img/yt.svg"
-import Facebook from "../public/img/fb.svg"
-import Twitter from "../public/img/tt.svg"
-import Spotify from "../public/img/spotify.svg"
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import Slider from "../components/sliders"
 import { useRef } from "react"
 import Menu from "../components/menu"
+import Lista from "../components/lista"
+import Footer from "../components/footer"
 
 function App() {
     const settings = {
@@ -57,7 +51,7 @@ function App() {
                 </header>
 
                 <main>
-                    <article className='bg-[#005E83] px-6 py-8 '>
+                    <article className='bg-primary_blue_dark px-6 py-8 '>
                         <h1 className='text-white text-3xl pt-20 mb-2 font-black font-NexaSlab leading-[33.6px]'>
                             CORPORATE LEARN & DRIVE: SUA ACADEMIA DE GESTÃO
                         </h1>
@@ -74,19 +68,19 @@ function App() {
                         
                     </article>
 
-                    <div className="bg-[#EFEDED] pt-6">
-                        <div className=" bg-[#EFEDED] ml-6 border-l-4 border-[#FAA635]">
+                    <div className="bg-medium_gray-2 pt-6">
+                        <div className=" bg-medium_gray-2 ml-6 border-l-4 border-tertiary_orange">
                             <article className="flex-col items-center pl-6 space-y-4" >
-                                <p className=' text-[#005E83] font-OpenSans text-base leading-[22.4px]'>
+                                <p className=' text-primary_blue_dark font-OpenSans text-base leading-[22.4px]'>
                                     Cadastre-se e faça a <b>avaliação de maturidade </b>da sua empresa <b>gratuitamente</b> .
                                 </p>
 
-                                <Button className="bg-[#2A9FBC]" > 
+                                <Button className="bg-primary_blue" > 
                                     QUERO COMEÇAR AGORA 
                                 </Button>
                             </article> 
                         </div>
-                        <div className="bg-[#EFEDED] pt-8">
+                        <div className="bg-medium_gray-2 pt-8">
                             <Seta className="h-9 w-9 animate-bounce m-auto rotate"/>
                         </div>
                     
@@ -95,12 +89,12 @@ function App() {
 
                     
                     
-                        <article className="flex-col p-8 bg-[#EFEDED] text-center" >
+                        <article className="flex-col p-8 bg-medium_gray-2 text-center" >
                                 <div className="border-y-8 border-white mt-8 py-6">
-                                    <h1 className="text-[#2A9FBC] text-2xl font-NexaSlab mb-2 font-light leading-[28.8px]" >
+                                    <h2 className="text-primary_blue text-2xl font-NexaSlab mb-2 font-light leading-[28.8px]" >
                                         SUA EMPRESA É ÚNICA
-                                    </h1>    
-                                    <span className="text-[#005E83] text-base pb-4 font-NexaSlab font-bold pl-4 leading-[22.4px]">
+                                    </h2>    
+                                    <span className="text-primary_blue_dark text-base pb-4 font-NexaSlab font-bold pl-4 leading-[22.4px]">
                                         É por isso que a jornada dela também tem que ser
                                     </span>
                                 </div>    
@@ -108,7 +102,7 @@ function App() {
                         </article>
 
 
-                        <article className="text-[#5C585B] bg-[#EFEDED] p-8 pb-3 leading-[22.4px] font-OpenSans">
+                        <article className="text-primary_gray_dark bg-medium_gray-2 p-8 pb-3 leading-[22.4px] font-OpenSans">
                         <p className="pb-3">
                                 Avaliamos as <b>lacunas do seu negócio</b> para sugerir os conteúdos que precisam ser trabalhados e isso faz toda a diferença.
                             </p>
@@ -119,7 +113,7 @@ function App() {
                     
                     
                     
-                    <div className="p-6 py-8 bg-[#EFEDED] relative overflow-hidden">
+                    <div className="p-6 py-8 bg-medium_gray-2 relative overflow-hidden">
                         <Slider settings={settings}>
                             <SwiperSlide>
                                 <CardFdc img={<Icon1/>}>
@@ -148,28 +142,27 @@ function App() {
                             </SwiperSlide>
                         </Slider>
 
-                        <FDC className="absolute h-[200px] w-[600px] left-1/2 translate-x-1/2  translate-y-1/2 bottom-60"/>
+                        <FDC className="absolute h-[200px] w-[600px] left-1/2 translate-x-1/2  translate-y-1/2 bottom-60 z-[2]"/>
                     </div>
 
                     
                     
 
-                    <div>
-                        
-                        <Decoracao1 className="absolute"/>
-                        <Decoracao2 className="absolute"/>
-                        <Decoracao3 className="absolute"/>
+                    <div className="bg-medium_gray-2 relative pt-20 min-h-300 space-y-40 p-6">
+                        <Decoracao1 className="absolute top-0 w-[17rem] z-[9]"/>
+                        <Decoracao2 className="pl-10 pr-2 absolute w-[20rem] bottom-20 z-[8]"/>
+                        <Decoracao3 className="relative bottom-0"/>
                     </div>
 
 
 
 
-                    <div className="bg-[#5C585B] px-6 mt-8 py-6">
+                    <div className="bg-primary_gray_dark px-6 mt-8 py-6">
 
                             <div className="border-y-8  border-[#686366]">
-                                <h1 className="text-[#2A9FBC] text-2xl font-NexaSlab font-light my-10 text-center leading-[28.8px]" >
+                                <h2 className="text-primary_blue text-2xl font-NexaSlab font-light my-10 text-center leading-[28.8px]" >
                                     SOBRE A FDC
-                                </h1>
+                                </h2>
                             </div>
                                     
                             <p className="text-white pb-3 mt-10 font-OpenSans text-base leading-[22.4px]" >
@@ -180,7 +173,7 @@ function App() {
                             </p> 
 
                             <div className="pt-14 pb-6 px-14">
-                                <div className="bg-[#FAA635] text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
+                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
                                     <p>45 anos</p>
                                 </div>
                                     <p className="px-3 py-2 text-white ">
@@ -191,7 +184,7 @@ function App() {
 
 
                             <div className="px-14">
-                                <div className="bg-[#FAA635] text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
+                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
                                     <p>+1 milhão</p>
                                 </div>
                                     <p className="px-3 py-2 text-white ">
@@ -201,7 +194,7 @@ function App() {
 
 
                             <div className="px-14 pb-6 pt-2">
-                                <div className="bg-[#FAA635] text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
+                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
                                     <p>+700</p>
                                 </div>
                                     <p className="px-3 py-2 text-white ">
@@ -210,7 +203,7 @@ function App() {
                             </div> 
 
                             <div className="px-14 ">
-                                <div className="bg-[#FAA635] text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
+                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
                                     <p>+900</p>
                                 </div>
                                     <p className="px-3 py-2 text-white ">
@@ -219,7 +212,7 @@ function App() {
                             </div>   
 
                             <div className="px-14 pb-6">
-                                <div className="bg-[#FAA635] text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
+                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
                                     <p>+37 mil</p>
                                 </div>
                                     <p className="px-3 py-2 text-white ">
@@ -228,7 +221,7 @@ function App() {
                             </div> 
                             
                             <div className="px-14">
-                                <div className="bg-[#FAA635] text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
+                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
                                     <p>1° em Educação</p>
                                 </div>
                                     <p className="px-3 py-2 text-white ">
@@ -237,7 +230,7 @@ function App() {
                             </div>
 
                             <div className="px-14 pt-6">
-                                <div className="bg-[#FAA635] text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
+                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
                                     <p>9° melhor</p>
                                 </div>
                                     <p className="px-3 py-2 text-white ">
@@ -249,7 +242,7 @@ function App() {
 
                             <div className="text-white text-center py-8" >
                                 <p className="mb-8" >*Segundo o ranking de Educação Executiva 2022 do Financial Times.</p>
-                                <Button className="bg-[#686366] border border-white" >CONHEÇA MAIS</Button>
+                                <Button className="bg-primary_gray_dark text-white border border-white hover:bg-white hover:text-primary_blue_dark" >CONHEÇA MAIS</Button>
                             </div>
 
 
@@ -275,106 +268,85 @@ function App() {
                             </SwiperSlide>
                     </Slider>     
 
-                    <article className="flex-col p-8 content-center bg-[#FFFFFF]" >
-                                <div className="border-y-8 border-[#E4E2E2] mt-8 py-6">
-                                    <h1 className="text-[#2A9FBC] text-2xl font-NexaSlab text-center font-light leading-[28.8px]" >
+                    <article className="flex-col p-8 content-center bg-white" >
+                                <div className="border-y-8 border-secondary_gray_medium mt-8 py-6">
+                                    <h2 className="text-primary_blue text-2xl font-NexaSlab text-center font-light leading-[28.8px]" >
                                         SUA EMPRESA EM BOA COMPANHIA
-                                    </h1>    
+                                    </h2>    
                                 </div>  
 
-                                <p className="text-[#5C585B] py-8 font-OpenSans text-base leading-[22.4px]">
+                                <p className="text-primary_gray_dark py-8 font-OpenSans text-base leading-[22.4px]">
                                     Confira os depoimentos de executivos e colaboradores que já participaramde programas empresariais da FDC.
                                 </p>  
 
                                 <div className="p-6 py-8 ">
                         <Slider settings={settings}>
                             <SwiperSlide>
-                                <Card2Fdc img={<Icon1/>}>
+                                <Card2Fdc nome={'Leandro Jasiocha'} cargo={'VP de Linhas de Produtos Latam'}>
                                     A escolha baseada na qualidade e no reconhecimento que a FDC possui. É uma qualidade de nível internacional e que tem um conhecimento muito amplo e grande do mercado brasileiro e latino americano e dentro das nossas necessidades, isso era chave.”
-                                    Leandro Jasiocha 
-                                    VP de Linhas de Produtos Latam
+                                    
+                                    
                                 </Card2Fdc>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Card2Fdc img={<Icon2/>}>
+                                <Card2Fdc nome={'Wanessa Lourenço'} cargo={'Analista Comercial SENAI GOIÁS'}>
                                     Gostei muito do assunto Saúde Organizacional, foi de grande relevância para mim. A forma como o professor explanou sobre os cenários que veremos nos próximos anos foi bem importante para nos anteciparmos às novas tendências.”
-                                    Wanessa Lourenço
-                                    Analista Comercial SENAI GOIÁS
                                 </Card2Fdc>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Card2Fdc img={<Icon3/>}>
+                                <Card2Fdc nome={'Kênio Fonseca Ferreira'}cargo={'Gerência de Logística Metalúrgica Amapá LTDA'}>
                                     O curso me fez refletir bastante sobre meu processo logístico e as contribuições significativas que a gestão do nosso estoque pode gerar para atender melhor aos clientes, que cada dia mais se tornam os precursores das mudanças das empresas.”
-                                    Kênio Fonseca Ferreira
-                                    Gerência de Logística Metalúrgica Amapá LTDA
                                 </Card2Fdc>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <Card2Fdc img={<Icon4/>}>
+                                <Card2Fdc nome={'Ticiano Arrais Sydriao de Alencar'} cargo={'Gerente de Agência Banco do Nordeste'}>
                                     Todos os professores utilizaram uma didática na transmissão de temas e, ao mesmo tempo, com um aprofundamento que nos leva à reflexão e ação. A leveza e a energia positiva que transmitem são diferenciais que prendem a atenção e fazem a “viagem conjunta” ser muito enriquecedora, além do conteúdo.”
-                                    Ticiano Arrais Sydriao de Alencar
-                                    Gerente de Agência Banco do Nordeste
                                 </Card2Fdc>
                             </SwiperSlide>
                         </Slider>
                     </div>
                     </article>
                     
-                    <article className="flex-col p-8 content-center bg-[#E4E2E2]" >
-                                <div className="border-y-8 border-[#FFFFFF] mt-8 py-6">
-                                    <h1 className="text-[#2A9FBC] text-2xl font-NexaSlab text-center font-Light" >
+                    <article className="flex-col p-8 content-center bg-secondary_gray_medium" >
+                                <div className="border-y-8 border-white mt-8 py-6">
+                                    <h2 className="text-primary_blue text-2xl font-NexaSlab text-center font-Light" >
                                         FAQ
-                                    </h1>    
+                                    </h2>    
                                 </div>  
 
                     </article>
 
-                    <article className="bg-[#005E83] py-20 " >
-                        <p className="text-white pb-8 px-6 font-NexaSlab font-bold leading-[28px] text-xl"> 
+                    <Lista>
+                        Como participar do programa Corporate - Learn & Drive para empresas da FDC?
+                    </Lista>
+
+                    {/* <button className="bg-primary_blue " onClick={() => setActive(active?false:true)}> 
+                                    QUERO COMEÇAR AGORA 
+                                </button> */}
+
+                        
+
+                    <article className="bg-primary_blue_dark py-20 " >
+                        <p className="text-white pb-6 px-6 font-NexaSlab font-bold leading-[28px] text-xl"> 
                             Transforme os gaps do seu negócio em oportunidades com a FDC
                         </p>
 
-                        <div className=" bg-[#005E83] ml-6 border-l-4 border-[#FAA635]">
+                        <div className=" bg-primary_blue_dark ml-6 border-l-4 border-tertiary_orange">
                             <div className=" flex-col items-center pl-4 space-y-6" >
-                                <p className=' text-[#FFFFFF] text-base font-OpenSans leading-[22.4px] '>
+                                <p className=' text-white text-base font-OpenSans leading-[22.4px] pr-6'>
                                     Cadastre-se agora mesmo e faça a <b>avaliação de maturidade </b>da sua empresa.
                                 </p>
 
-                                <Button className="bg-[#2A9FBC]" > 
+                                <Button className="bg-primary_blue hover:text-primary_blue_dark hover:bg-white" > 
                                     QUERO COMEÇAR AGORA 
                                 </Button>
                             </div> 
                         </div>
                     </article>
 
-                    <footer className="text-[#5C585B] p-6 pb-14 text-center">
-                        <p className="font-NexaSlab font-black pb-2">
-                            Fale conosco
-                        </p>
-                        <p className=" font-OpenSans text-base leading-[22.4px]">
-                            0800 941 9200
-                        </p>
-                        <p className="pb-8 font-OpenSans text-base leading-[22.4px]">
-                            atendimento@fdc.org.br
-                        </p>
+                    
+                    <Footer></Footer>
 
-                        <hr></hr>
-
-                        <div className="flex items-center justify-between space-x-6">
-                            <MSGicon className="h-24" />
-                            <Linkedin className="h-24"/>
-                            <Instagram className="h-24"/>
-                            <Youtube className="h-24"/>
-                            <Facebook className="h-24"/>
-                            <Twitter className="h-24"/>
-                            <Spotify className="h-24"/>
-                        </div>
-
-                        <hr></hr>
-
-
-                        <Ranking2 className="pt-12"/>
-                    </footer>
                 </main>
 
                 {/* <Menu></Menu> */}
