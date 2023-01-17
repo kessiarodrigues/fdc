@@ -5,14 +5,18 @@
 //      }, [active])
 import Setinha from "../public/img/setinha.svg"
 
-export default function Lista({children, className}) {
+export default function Lista({children, numero}) {
     return (
-        <div className="bg-secondary_gray_medium p-6 flex-row">
-            
-                <span className="text-tertiary_orange">1.</span>
-                <p className="font-OpenSans text-primary_gray_dark text-base">{children}</p>
-                <Setinha className="rotate-180 h-6 w-6 transform " aria-hidden="true"></Setinha>
+        <button className="bg-medium_gray-2 py-6 flex  w-full font-OpenSans ">
+                <strong className="text-tertiary_orange">
+                    {numero}
+                </strong>
 
-        </div>
+                <strong className="text-start  text-primary_gray_dark text-base w-full pl-2">
+                    {children}
+                </strong>
+
+                <Setinha className=" h-6 w-6" aria-hidden="true"></Setinha>
+        </button>
     )
 }

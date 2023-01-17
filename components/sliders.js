@@ -3,13 +3,8 @@ import { Pagination, A11y } from 'swiper'
 
 import 'swiper/css'
 
-export default function Slider({ settings, children, className}) {
-    // const swiper = new Swiper('.swiper', {
-    //     pagination: {
-    //       el: '.swiper-pagination',
-    //       type: 'bullets',
-    //     },
-    //   });
+export default function Slider({ settings, children}) {
+
     return <Swiper modules={[Pagination]} {...settings}>{ children }
     </Swiper>
 }

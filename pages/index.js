@@ -21,10 +21,10 @@ import Ranking from "../public/img/ranking.svg"
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import Slider from "../components/sliders"
-import { useRef } from "react"
 import Menu from "../components/menu"
 import Lista from "../components/lista"
 import Footer from "../components/footer"
+import Retangle from "../components/retangle"
 
 function App() {
     const settings = {
@@ -36,17 +36,17 @@ function App() {
         },
     }
 
-    const menu = useRef()
     return (
         <>
             <div className="App">
-
+            
                 <header className='fixed bg-white flex p-4 h-fit w-full justify-between items-center z-10'>
+                <Menu></Menu>
                     <div  className="h-auto">
                         <Logo  className="h-8" />
                     </div>
-                    <button onClick={()=> console.log(menu)}>
-                        <Vector className="h-3 onclick:"/>
+                    <button onClick={()=> (<Menu/>)}>
+                        <Vector className="h-3"/>
                     </button>
                 </header>
 
@@ -65,12 +65,11 @@ function App() {
                         </p>
 
                         <KV className="h-92" />
-                        
                     </article>
 
                     <div className="bg-medium_gray-2 pt-6">
                         <div className=" bg-medium_gray-2 ml-6 border-l-4 border-tertiary_orange">
-                            <article className="flex-col items-center pl-6 space-y-4" >
+                            <article className="flex-col items-center pl-6 space-y-6" >
                                 <p className=' text-primary_blue_dark font-OpenSans text-base leading-[22.4px]'>
                                     Cadastre-se e faça a <b>avaliação de maturidade </b>da sua empresa <b>gratuitamente</b> .
                                 </p>
@@ -83,13 +82,12 @@ function App() {
                         <div className="bg-medium_gray-2 pt-8">
                             <Seta className="h-9 w-9 animate-bounce m-auto rotate"/>
                         </div>
-                    
                     </div>
 
 
                     
-                    
-                        <article className="flex-col p-8 bg-medium_gray-2 text-center" >
+                    <div>
+                        <article className="flex-col px-6 py-1 bg-medium_gray-2 text-center" >
                                 <div className="border-y-8 border-white mt-8 py-6">
                                     <h2 className="text-primary_blue text-2xl font-NexaSlab mb-2 font-light leading-[28.8px]" >
                                         SUA EMPRESA É ÚNICA
@@ -98,63 +96,58 @@ function App() {
                                         É por isso que a jornada dela também tem que ser
                                     </span>
                                 </div>    
-                                
                         </article>
 
 
                         <article className="text-primary_gray_dark bg-medium_gray-2 p-8 pb-3 leading-[22.4px] font-OpenSans">
-                        <p className="pb-3">
+                            <p className="pb-3">
                                 Avaliamos as <b>lacunas do seu negócio</b> para sugerir os conteúdos que precisam ser trabalhados e isso faz toda a diferença.
-                            </p>
-                            <p className="">
+                             </p>
+                            <p>
                                 Seu time ainda pode adicionar módulos de interesse de acordo com a cultura e as necessidades pontuais da organização, formando uma <b>grade curricular flexível.</b> 
                             </p>
                         </article>
                     
                     
                     
-                    <div className="p-6 py-8 bg-medium_gray-2 relative overflow-hidden">
-                        <Slider settings={settings}>
-                            <SwiperSlide>
-                                <CardFdc img={<Icon1/>}>
-                                    <b>Learn:</b> mais de <b>220 módulos</b>, distribuídos em 7 dimensões empresariais
-                                </CardFdc>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <CardFdc img={<Icon2/>}>
-                                    <b>Drive:</b> transposição do conhecimento para a prática, com <b>metodologia exclusiva FDC</b>
-                                </CardFdc>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <CardFdc img={<Icon3/>}>
-                                    <b>Relatórios gerenciais</b> para acompanhar o engajamento do time
-                                </CardFdc>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <CardFdc img={<Icon4/>}>
-                                    Desenvolvimento <b>Blended Learning,</b> com turmas de até 30 pessoas
-                                </CardFdc>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <CardFdc img={<Icon5/>}>
-                                    Conteúdos exclusivos, seguindo o padrão de <b>excelência da FDC</b>
-                                </CardFdc>
-                            </SwiperSlide>
-                        </Slider>
+                        <div className="p-6 py-8 bg-medium_gray-2 overflow-hidden ">
+                            <Slider settings={settings}>
+                                <SwiperSlide>
+                                    <CardFdc img={<Icon1/>}>
+                                        <b>Learn:</b> mais de <b>220 módulos</b>, distribuídos em 7 dimensões empresariais
+                                    </CardFdc>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <CardFdc img={<Icon2/>}>
+                                        <b>Drive:</b> transposição do conhecimento para a prática, com <b>metodologia exclusiva FDC</b>
+                                    </CardFdc>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <CardFdc img={<Icon3/>}>
+                                        <b>Relatórios gerenciais</b> para acompanhar o engajamento do time
+                                    </CardFdc>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <CardFdc img={<Icon4/>}>
+                                        Desenvolvimento <b>Blended Learning,</b> com turmas de até 30 pessoas
+                                    </CardFdc>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <CardFdc img={<Icon5/>}>
+                                        Conteúdos exclusivos, seguindo o padrão de <b>excelência da FDC</b>
+                                    </CardFdc>
+                                </SwiperSlide>
+                            </Slider>
+                        </div>
 
-                        <FDC className="absolute h-[200px] w-[600px] left-1/2 translate-x-1/2  translate-y-1/2 bottom-60 z-[2]"/>
+
+                        <div className="bg-medium_gray-2 relative pt-20 min-h-300 space-y-40 p-6">
+                            <Decoracao1 className="absolute top-0 w-[17rem] z-[9]"/>
+                            <Decoracao2 className="pl-10 pr-2 absolute w-[20rem] bottom-20 z-[8]"/>
+                            <Decoracao3 className="relative bottom-0"/>
+                        </div>
+                        {/* <FDC className="absolute w-[] top-40 inset-y-0 inset-x-0 mx-auto  z-0 "/> */}
                     </div>
-
-                    
-                    
-
-                    <div className="bg-medium_gray-2 relative pt-20 min-h-300 space-y-40 p-6">
-                        <Decoracao1 className="absolute top-0 w-[17rem] z-[9]"/>
-                        <Decoracao2 className="pl-10 pr-2 absolute w-[20rem] bottom-20 z-[8]"/>
-                        <Decoracao3 className="relative bottom-0"/>
-                    </div>
-
-
 
 
                     <div className="bg-primary_gray_dark px-6 mt-8 py-6">
@@ -168,75 +161,38 @@ function App() {
                             <p className="text-white pb-3 mt-10 font-OpenSans text-base leading-[22.4px]" >
                                 <b>A FDC impulsiona o desenvolvimento</b> das organizações com uma abordagem focada em resultados, inclusão e sustentabilidade para os negócios. Olhamos para a real necessidade, bem como para os desafios e objetivos das organizações e de seus profissionais, contribuindo para o aprimoramento das competências gerenciais e individuais e a melhoria constante da governança, gestão e dos resultados.
                             </p> 
-                            <p className="text-white font-OpenSans text-base leading-[22.4px]">  
+                            <p className="text-white font-OpenSans text-base leading-[22.4px] pb-14">  
                                  <b>Nossas soluções geram impacto e compreendem temáticas globais,</b> acompanhando as transformações do mundo e da sociedade na velocidade que o mercado exige.  
-                            </p> 
+                            </p>
 
-                            <div className="pt-14 pb-6 px-14">
-                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
-                                    <p>45 anos</p>
-                                </div>
-                                    <p className="px-3 py-2 text-white ">
-                                        de história de sucesso
+                            <Retangle numeral={'45 anos'}>
+                                de história de sucesso
                                         e liderança
-                                    </p>
-                            </div>
+                            </Retangle> 
 
+                            <Retangle numeral={'+1 milhão'}>
+                                de executivos capacitados em programas
+                            </Retangle>
 
-                            <div className="px-14">
-                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
-                                    <p>+1 milhão</p>
-                                </div>
-                                    <p className="px-3 py-2 text-white ">
-                                        de executivos capacitados em programas
-                                    </p>
-                            </div> 
-
-
-                            <div className="px-14 pb-6 pt-2">
-                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
-                                    <p>+700</p>
-                                </div>
-                                    <p className="px-3 py-2 text-white ">
-                                     docentes com notoriedade nacional e internacional
-                                    </p>
-                            </div> 
-
-                            <div className="px-14 ">
-                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
-                                    <p>+900</p>
-                                </div>
-                                    <p className="px-3 py-2 text-white ">
-                                        empresas cliente atendidas por ano
-                                    </p>
-                            </div>   
-
-                            <div className="px-14 pb-6">
-                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
-                                    <p>+37 mil</p>
-                                </div>
-                                    <p className="px-3 py-2 text-white ">
-                                     executivos participantes por ano
-                                    </p>
-                            </div> 
+                            <Retangle numeral={'+700'}>
+                                docentes com notoriedade nacional e internacional
+                            </Retangle>
                             
-                            <div className="px-14">
-                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
-                                    <p>1° em Educação</p>
-                                </div>
-                                    <p className="px-3 py-2 text-white ">
-                                        Executiva na América Latina há 15 anos consecutivos*
-                                    </p>
-                            </div>
+                            <Retangle numeral={'+900'}>
+                                empresas cliente atendidas por ano
+                            </Retangle>
 
-                            <div className="px-14 pt-6">
-                                <div className="bg-tertiary_orange text-white font-NexaSlab font-Bold text-xl px-4 py-2" >
-                                    <p>9° melhor</p>
-                                </div>
-                                    <p className="px-3 py-2 text-white ">
-                                        escola de negócios do mundo*
-                                    </p>
-                            </div> 
+                            <Retangle numeral={'+37 mil'}>
+                                executivos participantes por ano
+                            </Retangle>
+
+                            <Retangle numeral={'1° em educação'}>
+                                Executiva na América Latina há 15 anos consecutivos*
+                            </Retangle>
+
+                            <Retangle numeral={'9° melhor'}>
+                                escola de negócios do mundo*
+                            </Retangle>
 
 
 
@@ -284,8 +240,6 @@ function App() {
                             <SwiperSlide>
                                 <Card2Fdc nome={'Leandro Jasiocha'} cargo={'VP de Linhas de Produtos Latam'}>
                                     A escolha baseada na qualidade e no reconhecimento que a FDC possui. É uma qualidade de nível internacional e que tem um conhecimento muito amplo e grande do mercado brasileiro e latino americano e dentro das nossas necessidades, isso era chave.”
-                                    
-                                    
                                 </Card2Fdc>
                             </SwiperSlide>
                             <SwiperSlide>
@@ -305,20 +259,55 @@ function App() {
                             </SwiperSlide>
                         </Slider>
                     </div>
+
+                    {/* <FDC className="absolute h-[200px] w-[500px] inset-0 top-60  "/> */}
+
                     </article>
                     
-                    <article className="flex-col p-8 content-center bg-secondary_gray_medium" >
-                                <div className="border-y-8 border-white mt-8 py-6">
+                    <article className="flex-col p-8 content-center bg-medium_gray-2" >
+                                <div className="border-y-8 border-white mt-8 py-8 mb-4">
                                     <h2 className="text-primary_blue text-2xl font-NexaSlab text-center font-Light" >
                                         FAQ
                                     </h2>    
                                 </div>  
 
+                        <Lista numero={'1.'}>
+                            Como participar do programa Corporate - Learn & Drive para empresas da FDC?
+                        </Lista>
+
+                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
+
+                        <Lista numero={'2.'}>
+                            Quanto tempo leva para preencher o raio-x e obter os resultados da minha empresa?
+                        </Lista>
+
+                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
+
+                        <Lista numero={'3.'}>
+                            Quanto precisarei investir?
+                        </Lista>
+
+                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
+
+                        <Lista numero={'4.'}>
+                            Qual é a modalidade do programa?
+                        </Lista>
+
+                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
+
+                        <Lista numero={'5.'}>
+                            É possível alterar a trilha sugerida pela FDC?
+                        </Lista>
+
+                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
+
+                        <Lista numero={'6.'}>
+                            Porque o programa se chama Corporate Learn & Drive?
+                        </Lista>
                     </article>
 
-                    <Lista>
-                        Como participar do programa Corporate - Learn & Drive para empresas da FDC?
-                    </Lista>
+                    
+                    
 
                     {/* <button className="bg-primary_blue " onClick={() => setActive(active?false:true)}> 
                                     QUERO COMEÇAR AGORA 
@@ -336,7 +325,6 @@ function App() {
                                 <p className=' text-white text-base font-OpenSans leading-[22.4px] pr-6'>
                                     Cadastre-se agora mesmo e faça a <b>avaliação de maturidade </b>da sua empresa.
                                 </p>
-
                                 <Button className="bg-primary_blue hover:text-primary_blue_dark hover:bg-white" > 
                                     QUERO COMEÇAR AGORA 
                                 </Button>
@@ -348,8 +336,6 @@ function App() {
                     <Footer></Footer>
 
                 </main>
-
-                {/* <Menu></Menu> */}
             </div>
         </>
     );
