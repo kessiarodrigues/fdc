@@ -5,6 +5,6 @@ import 'swiper/css'
 
 export default function Slider({ settings, children}) {
 
-    return <Swiper modules={[Pagination]} {...settings}>{ children }
+    return <Swiper  modules={[Pagination]} {...settings}>{ children }
     </Swiper>
 }

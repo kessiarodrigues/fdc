@@ -9,6 +9,11 @@
     position: relative;
 }
 
+.card-slide{
+    height: auto !important;
+}
+
+
 .swiper-pagination{
     
     height: 20px;

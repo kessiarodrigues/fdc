@@ -22,9 +22,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import Slider from "../components/sliders"
 import Menu from "../components/menu"
-import Lista from "../components/lista"
 import Footer from "../components/footer"
 import Retangle from "../components/retangle"
+import FaqPrincipal from "../components/faq"
+import { useState } from "react"
 
 function App() {
     const settings = {
@@ -32,22 +33,22 @@ function App() {
         slidesPerView: 1,
         pagination: {
             clickable: true,
-
         },
     }
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <>
             <div className="App">
             
                 <header className='fixed bg-white flex p-4 h-fit w-full justify-between items-center z-10'>
-                <Menu></Menu>
                     <div  className="h-auto">
                         <Logo  className="h-8" />
                     </div>
-                    <button onClick={()=> (<Menu/>)}>
+                    <button onClick={()=> setIsOpen(!isOpen)}>
                         <Vector className="h-3"/>
                     </button>
+                    <Menu closeMenu={()=> setIsOpen(!isOpen)} className={`${isOpen?"block":"hidden"}`}></Menu>
                 </header>
 
                 <main>
@@ -271,47 +272,10 @@ function App() {
                                     </h2>    
                                 </div>  
 
-                        <Lista numero={'1.'}>
-                            Como participar do programa Corporate - Learn & Drive para empresas da FDC?
-                        </Lista>
-
-                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
-
-                        <Lista numero={'2.'}>
-                            Quanto tempo leva para preencher o raio-x e obter os resultados da minha empresa?
-                        </Lista>
-
-                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
-
-                        <Lista numero={'3.'}>
-                            Quanto precisarei investir?
-                        </Lista>
-
-                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
-
-                        <Lista numero={'4.'}>
-                            Qual é a modalidade do programa?
-                        </Lista>
-
-                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
-
-                        <Lista numero={'5.'}>
-                            É possível alterar a trilha sugerida pela FDC?
-                        </Lista>
-
-                        <hr className="border-none h-0.5 bg-tertiary_gray_blue"></hr>
-
-                        <Lista numero={'6.'}>
-                            Porque o programa se chama Corporate Learn & Drive?
-                        </Lista>
+                                <FaqPrincipal/>
                     </article>
 
                     
-                    
-
-                    {/* <button className="bg-primary_blue " onClick={() => setActive(active?false:true)}> 
-                                    QUERO COMEÇAR AGORA 
-                                </button> */}
 
                         
 
