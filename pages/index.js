@@ -1,9 +1,8 @@
-import Logo from "../public/img/header.svg"
-import Vector from "../public/img/Vector.svg"
 import KV from "../public/img/KV.svg"
 import Seta from "../public/img/seta.svg"
 import Button from "../components/button.js"
 import FDC from "../public/img/FDCmarcadagua.svg"
+import FDCescuro from "../public/img/FDCescuro.svg"
 import CardFdc from "../components/card"
 import Card2Fdc from "../components/card2.js"
 import Icon1 from "../public/img/Frame1.svg"
@@ -17,15 +16,17 @@ import Decoracao3 from "../public/img/decoracao3.svg"
 import Carrossel1 from "../public/img/carrossel1.svg"
 import Carrossel2 from "../public/img/carrossel2.svg"
 import Carrossel3 from "../public/img/carrossel3.svg"
-import Ranking from "../public/img/ranking.svg"
-import { Swiper, SwiperSlide } from "swiper/react"
+import Certificacao1 from "../public/img/certificacao1.svg"
+import Certificacao2 from "../public/img/certificacao2.svg"
+import Certificacao3 from "../public/img/certificacao3.svg"
+import { SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import Slider from "../components/sliders"
-import Menu from "../components/menu"
 import Footer from "../components/footer"
 import Retangle from "../components/retangle"
 import FaqPrincipal from "../components/faq"
 import { useState } from "react"
+import Header  from "../components/header"
 
 function App() {
     const settings = {
@@ -41,15 +42,7 @@ function App() {
         <>
             <div className="App">
             
-                <header className='fixed bg-white flex p-4 h-fit w-full justify-between items-center z-10'>
-                    <div  className="h-auto">
-                        <Logo  className="h-8" />
-                    </div>
-                    <button onClick={()=> setIsOpen(!isOpen)}>
-                        <Vector className="h-3"/>
-                    </button>
-                    <Menu closeMenu={()=> setIsOpen(!isOpen)} className={`${isOpen?"block":"hidden"}`}></Menu>
-                </header>
+                <Header></Header>
 
                 <main>
                     <article className='bg-primary_blue_dark px-6 py-8 '>
@@ -70,14 +63,13 @@ function App() {
 
                     <div className="bg-medium_gray-2 pt-6">
                         <div className=" bg-medium_gray-2 ml-6 border-l-4 border-tertiary_orange">
-                            <article className="flex-col items-center pl-6 space-y-6" >
+                            <article className="flex-col items-center pl-8 space-y-6" >
                                 <p className=' text-primary_blue_dark font-OpenSans text-base leading-[22.4px]'>
                                     Cadastre-se e faça a <b>avaliação de maturidade </b>da sua empresa <b>gratuitamente</b> .
                                 </p>
-
-                                <Button className="bg-primary_blue" > 
-                                    QUERO COMEÇAR AGORA 
-                                </Button>
+                                    <Button href="" className="bg-primary_blue" alt="Quero começar agora" > 
+                                        QUERO COMEÇAR AGORA 
+                                    </Button>
                             </article> 
                         </div>
                         <div className="bg-medium_gray-2 pt-8">
@@ -89,7 +81,7 @@ function App() {
                     
                     <div>
                         <article className="flex-col px-6 py-1 bg-medium_gray-2 text-center" >
-                                <div className="border-y-8 border-white mt-8 py-6">
+                                <div className="border-y-8 border-white mt-2 py-6">
                                     <h2 className="text-primary_blue text-2xl font-NexaSlab mb-2 font-light leading-[28.8px]" >
                                         SUA EMPRESA É ÚNICA
                                     </h2>    
@@ -151,7 +143,7 @@ function App() {
                     </div>
 
 
-                    <div className="bg-primary_gray_dark px-6 mt-8 py-6">
+                    <div className="bg-primary_gray_dark px-6 py-6">
 
                             <div className="border-y-8  border-[#686366]">
                                 <h2 className="text-primary_blue text-2xl font-NexaSlab font-light my-10 text-center leading-[28.8px]" >
@@ -198,30 +190,40 @@ function App() {
 
 
                             <div className="text-white text-center py-8" >
-                                <p className="mb-8" >*Segundo o ranking de Educação Executiva 2022 do Financial Times.</p>
-                                <Button className="bg-primary_gray_dark text-white border border-white hover:bg-white hover:text-primary_blue_dark" >CONHEÇA MAIS</Button>
+                                <p className="mb-8" >
+                                    *Segundo o ranking de Educação Executiva 2022 do Financial Times.
+                                </p>
+                                <Button href="" alt="Conheça Mais" className="bg-primary_gray_dark text-white border border-white hover:bg-white hover:text-primary_blue_dark" >
+                                    CONHEÇA MAIS
+                                </Button>
                             </div>
 
 
 
-                            <div className="pb-14 pt-6">
-                            <Ranking/>  
+                            <div className="flex flex-col  pb-14 pt-10 items-center space-y-6 bg-white ">
+                            <div className="bg-tertiary_orange h-2 w-12 mr-48 "></div>
+                                <h3 className="font-NexaSlab text-bold text-primary_gray_dark leading-[19.2px]">RANKING E CERTIFICAÇÕES</h3>
+                                <Certificacao1 className=""/>
+                                <Certificacao2 />
+                                <Certificacao3/>
                             </div>  
+
+                            {/* <FDCescuro/> */}
 
                                           
                     </div>
 
                     <Slider settings={settings}>
                             <SwiperSlide>
-                                    <Carrossel1/>
+                                    <Carrossel1 alt="Faixada de prédio"/>
                             </SwiperSlide>
 
                             <SwiperSlide>
-                                    <Carrossel2/>
+                                    <Carrossel2 alt="Faixada de prédio"/>
                             </SwiperSlide>
 
                             <SwiperSlide>
-                                    <Carrossel3/>
+                                    <Carrossel3 alt="Pessoas trabalhando em um escritóro"/>
                             </SwiperSlide>
                     </Slider>     
 
@@ -232,11 +234,11 @@ function App() {
                                     </h2>    
                                 </div>  
 
-                                <p className="text-primary_gray_dark py-8 font-OpenSans text-base leading-[22.4px]">
+                                <p className="text-primary_gray_dark py-6 font-OpenSans text-base leading-[22.4px]">
                                     Confira os depoimentos de executivos e colaboradores que já participaramde programas empresariais da FDC.
                                 </p>  
 
-                                <div className="p-6 py-8 ">
+                                <div className="p-6 ">
                         <Slider settings={settings}>
                             <SwiperSlide>
                                 <Card2Fdc nome={'Leandro Jasiocha'} cargo={'VP de Linhas de Produtos Latam'}>
@@ -274,9 +276,6 @@ function App() {
 
                                 <FaqPrincipal/>
                     </article>
-
-                    
-
                         
 
                     <article className="bg-primary_blue_dark py-20 " >
@@ -285,11 +284,11 @@ function App() {
                         </p>
 
                         <div className=" bg-primary_blue_dark ml-6 border-l-4 border-tertiary_orange">
-                            <div className=" flex-col items-center pl-4 space-y-6" >
+                            <div className=" flex-col items-center pl-8 space-y-6" >
                                 <p className=' text-white text-base font-OpenSans leading-[22.4px] pr-6'>
                                     Cadastre-se agora mesmo e faça a <b>avaliação de maturidade </b>da sua empresa.
                                 </p>
-                                <Button className="bg-primary_blue hover:text-primary_blue_dark hover:bg-white" > 
+                                <Button href="" className="bg-primary_blue hover:text-primary_blue_dark hover:bg-white" > 
                                     QUERO COMEÇAR AGORA 
                                 </Button>
                             </div> 
@@ -298,7 +297,6 @@ function App() {
 
                     
                     <Footer></Footer>
-
                 </main>
             </div>
         </>
